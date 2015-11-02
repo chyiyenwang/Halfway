@@ -1,6 +1,10 @@
 $(document).ready(function() {
-
+  var geocoder = new google.maps.Geocoder();
   getLocation();
+
+  function geocodeAdress(geocoder, resultsMap) {
+    var address = document.getElementById('address').value
+  }
 
   function getLocation() {
     if (navigator.geolocation) {
@@ -27,12 +31,8 @@ $(document).ready(function() {
 
     var map = new google.maps.Map(document.getElementById("mapholder"), myOptions);
     var marker = new google.maps.Marker({position:latlon,map:map,title:"You are here!"});
-}
 
     console.log("Latitude: " + lat + " Longitude: " + lon); 
-
-    $('#latitude').text(lat);
-    $('#longitude').text(lon);
   };
 
 });

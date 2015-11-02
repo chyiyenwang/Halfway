@@ -2,6 +2,7 @@ var express = require('express');
 var ejsLayouts = require('express-ejs-layouts');
 var bodyParser = require('body-parser');
 var app = express();
+var db = require('./models');
 
 app.use(ejsLayouts);
 app.use(bodyParser.urlencoded({extended: false}));
@@ -34,11 +35,6 @@ app.use(function(req, res, next) {
   }
 });
 
-
-app.get('/', function(req, res) {
-  res.render('index');
-});
-
 var flash = require('connect-flash');
 app.use(flash());
 
@@ -48,6 +44,9 @@ app.use(function(req, res, next) {
   next();
 });
 
+app.get('/', function(req, res) {
+  res.render('index');
+});
 app.use('/', require('./controllers/auth'));
 app.use('/', require('./controllers/results'));
 

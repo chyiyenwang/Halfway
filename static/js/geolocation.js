@@ -5,8 +5,8 @@ function initMap() {
   // Creates a map based off the location of the input text box 'address'
   map = new google.maps.Map(document.getElementById('mapholder'), {
     center: {
-      lat: yourLocation.lat,
-      lng: yourLocation.lng
+      lat: destination.lat,
+      lng: destination.lng
     },
     zoom: 15
   });
@@ -19,8 +19,8 @@ function initMap() {
     fillOpacity: 0.65,
     map: map,
     center: {
-      lat: yourLocation.lat,
-      lng: yourLocation.lng
+      lat: destination.lat,
+      lng: destination.lng
     },
     radius: 1000
   });
@@ -28,7 +28,8 @@ function initMap() {
   var request = {
     location: map.getCenter(),
     radius: '1000',
-    query: 'bar'
+    query: 'bar',
+    openNow: true
   };
 
   var service = new google.maps.places.PlacesService(map);
@@ -36,7 +37,7 @@ function initMap() {
 }
 
 function callback(results, status) {
-  // console.log(results)
+  console.log(results)
   // console.log('blah');
   if (status == google.maps.places.PlacesServiceStatus.OK) {
     for (var idx in results) {
@@ -51,12 +52,9 @@ function callback(results, status) {
       // console.log(results[idx].name);
 
       // Clickable marker with description
-      var description = {
-        name: this.title
-      }
 
       marker.addListener('click', function() {
-        var infoWindow = new google.maps.InfoWindow({content: "<h3>" + description + "</h3>"})
+        var infoWindow = new google.maps.InfoWindow({content: "<h3>" + this.title + "</h3>"})
         infoWindow.open(map, this);
         console.log(description.name)
       })

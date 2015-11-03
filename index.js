@@ -6,7 +6,6 @@ var port = process.env.PORT || 3000;
 var db = require('./models');
 var geocoder = require('geocoder');
 
-
 app.use(ejsLayouts);
 app.use(bodyParser.urlencoded({extended: false}));
 app.use('/', express.static(__dirname + '/static/'));
@@ -18,6 +17,10 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }));
+
+var gkey = {
+  google_key: process.env.GOOGLE_MAPs_KEY
+};
 
 app.use(function(req, res, next) {
   if (req.session.user) {

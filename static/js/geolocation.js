@@ -2,10 +2,6 @@ $(document).ready(function() {
 
   getLocation();
 
-  function geocodeAdress(geocoder, resultsMap) {
-    var address = document.getElementById('address').value
-  }
-
   function getLocation() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(showPosition);

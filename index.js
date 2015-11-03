@@ -2,7 +2,10 @@ var express = require('express');
 var ejsLayouts = require('express-ejs-layouts');
 var bodyParser = require('body-parser');
 var app = express();
+var port = process.env.PORT || 3000;
 var db = require('./models');
+var geocoder = require('geocoder');
+
 
 app.use(ejsLayouts);
 app.use(bodyParser.urlencoded({extended: false}));
@@ -11,7 +14,7 @@ app.set('view engine', 'ejs');
 
 var session = require('express-session');
 app.use(session({
-  secret: 'ifyousmellwhattherockiscookin',
+  secret: process.env.SALT,
   resave: false,
   saveUninitialized: true
 }));
@@ -50,6 +53,6 @@ app.get('/', function(req, res) {
 app.use('/', require('./controllers/auth'));
 app.use('/', require('./controllers/results'));
 
-app.listen(3000, function() {
+app.listen(port, function() {
   console.log('Skynet initializing');
 });

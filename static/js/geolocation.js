@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  var geocoder = new google.maps.Geocoder();
+
   getLocation();
 
   function geocodeAdress(geocoder, resultsMap) {
@@ -15,8 +15,10 @@ $(document).ready(function() {
   };
 
   function showPosition(position) {
-    var lat = position.coords.latitude;
-    var lon = position.coords.longitude;
+    // var lat = position.coords.latitude;
+    // var lon = position.coords.longitude;
+    var lat = yourLocation.lat;
+    var lon = yourLocation.lng;
     var latlon = new google.maps.LatLng(lat, lon);
     var mapholder = document.getElementById('mapholder')
     mapholder.style.height = '250px';

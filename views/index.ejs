@@ -6,11 +6,11 @@
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form> -->
-<form>
-  <div>
-    <input id="address" type="textbox">
-    <input id="submit" type="button" value="Geocode">
+<form action="/results" method="GET" role="form">
+  <div class="form-group">
+    <input type="text" class="form-control" name="address" placeholder="Enter Address">
   </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
-<a href="/results"><button type="button" class="btn btn-primary">Get Location</button></a>
+<!-- <a href="/results"><button type="button" class="btn btn-primary">Get Location</button></a> -->

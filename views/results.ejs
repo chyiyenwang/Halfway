@@ -1,19 +1,11 @@
 <h1>Results</h1>
 
-<div id="mapholder"></div>
+<div id="mapholder" style="height: 500px;width: 500px"></div>
 
-
-<% for(var i in obj.businesses) { %>
-  <% var store = obj.businesses[i] %>
-    <div class="well">
-      <%= store.name %>
-    </div>
-<% } %>
 
 
 <script>var yourLocation = <%- JSON.stringify(yourLocation) %></script>
+<script> var stores = <%- JSON.stringify(stores) %></script>
 <!-- <script src="http://maps.google.com/maps/api/js?sensor=false"></script> -->
-<script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=process.env.GOOGLE_MAPS_KEY&callback=getLocation">
-    </script>
+<script src="https://maps.googleapis.com/maps/api/js?&v=3.21&callback=initMap&libraries=places&key="></script>
 <script type="text/javascript" src="js/geolocation.js"></script>

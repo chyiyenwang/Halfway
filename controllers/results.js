@@ -19,12 +19,9 @@ router.route('/results')
       locationInput = req.query.address;
       geocoder.geocode(locationInput, function (err, data) {
         var yourLocation = data.results[0].geometry.location
-        yelp.search({term: "tacos", ll: yourLocation.lat + ", " + yourLocation.lng }, function(error, obj) {
-          // res.send({obj: obj});
-          res.render('results', {yourLocation: yourLocation, obj: obj});
+        yelp.search({term: "tacos", ll: yourLocation.lat + ", " + yourLocation.lng, radius_filter: 4000}, function(error, stores) {
+          res.render('results', {yourLocation: yourLocation, stores: stores});
         })
-        // res.render('results', {yourLocation: yourLocation, obj: obj});
-        // res.send(yourLocation.lat);
       });
     }
     else {

@@ -26,6 +26,7 @@
     "express-session": "^1.12.1",
     "geocoder": "^0.2.2",
     "google-maps": "^3.1.0",
+    "path": "^0.12.7",
     "pg": "^4.4.3",
     "pg-hstore": "^2.3.2",
     "request": "^2.65.0",

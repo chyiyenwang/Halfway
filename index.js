@@ -4,11 +4,12 @@ var bodyParser = require('body-parser');
 var app = express();
 var port = process.env.PORT || 3000;
 var db = require('./models');
+var path = require('path');
 var geocoder = require('geocoder');
 
 app.use(ejsLayouts);
 app.use(bodyParser.urlencoded({extended: false}));
-app.use('/', express.static(__dirname + '/static/'));
+app.use(express.static(path.join(__dirname, '/static')));
 app.set('view engine', 'ejs');
 
 var session = require('express-session');

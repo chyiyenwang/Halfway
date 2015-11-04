@@ -5,13 +5,13 @@ function initMap() {
   // Creates a map based off the location of the input text box 'address'
   map = new google.maps.Map(document.getElementById('mapholder'), {
     center: {
-      lat: destination.lat,
-      lng: destination.lng
+      lat: rendezvous.lat,
+      lng: rendezvous.lng
     },
     zoom: 15
   });
 
-  // Creates the circle with a 500 meter radius on the map that is centered on the destination location
+  // Creates the circle with a 500 meter radius on the map that is centered on the rendezvous location
   var circle = new google.maps.Circle({
     strokeColor: '#96ECFF',
     strokeOpacity: 0.8,
@@ -20,8 +20,8 @@ function initMap() {
     fillOpacity: 0.65,
     map: map,
     center: {
-      lat: destination.lat,
-      lng: destination.lng
+      lat: rendezvous.lat,
+      lng: rendezvous.lng
     },
     radius: 1000
   });

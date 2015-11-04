@@ -6,6 +6,7 @@ var port = process.env.PORT || 3000;
 var db = require('./models');
 var path = require('path');
 var geocoder = require('geocoder');
+var distance = require('google-distance-matrix');
 
 app.use(ejsLayouts);
 app.use(bodyParser.urlencoded({extended: false}));

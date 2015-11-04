@@ -25,6 +25,7 @@
     "express-ejs-layouts": "^2.0.0",
     "express-session": "^1.12.1",
     "geocoder": "^0.2.2",
+    "google-distance-matrix": "0.0.3",
     "google-maps": "^3.1.0",
     "path": "^0.12.7",
     "pg": "^4.4.3",

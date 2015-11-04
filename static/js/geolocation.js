@@ -39,6 +39,7 @@ function initMap() {
 
 function callback(results, status) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
+    console.log(results);
     for (var idx in results) {
       var marker = new google.maps.Marker({
         map: map,
@@ -46,12 +47,23 @@ function callback(results, status) {
           placeId: results[idx].place_id,
           location: results[idx].geometry.location
         },
-        title: results[idx].name
+        title: results[idx].name,
+        address: results[idx].formatted_address
       });
 
       // Clickable marker with description
-      marker.addListener('click', function() {
-        var infoWindow = new google.maps.InfoWindow({content: "<h3>" + this.title + "</h3>"})
+      marker.addListener('click', function(e) {
+        var infoWindow = new google.maps.InfoWindow({
+          content:  "<p><h3>" + this.title + "</h3>" +
+                    "<p>" + this.address + "</p>" +
+                    "<form action='/results' method='POST' role='form'>" +
+                    "<div class='form-group'>" +
+                    "<input type='hidden' class='form-control' name='title' value='" + this.title + "'>" +
+                    "<input type='hidden' class='form-control' name='address' value='" + this.address + "'>" +
+                    "</div>" +
+                    "<button type='submit' class='btn btn-success pull-right' id='share'>Share</button>" +
+                    "</form></p>"
+          })
         infoWindow.open(map, this);
       })
     }; 

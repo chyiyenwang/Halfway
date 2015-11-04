@@ -54,16 +54,16 @@ router.route('/auth/login')
       }
       else {
         req.flash('danger', 'Invalid username or password');
-        res.redirect('/auth/login');
+        res.redirect('/');
       }
     });
   });
 
-  router.route('/auth/logout')
-    .get(function(req, res) {
-      req.flash('info', 'You are logged out!');
-      req.session.user = false;
-      res.redirect('/')
-    });
+router.route('/auth/logout')
+  .get(function(req, res) {
+    req.flash('info', 'You are logged out!');
+    req.session.user = false;
+    res.redirect('/')
+  });
 
 module.exports = router;

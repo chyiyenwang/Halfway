@@ -1,16 +1,32 @@
 <h1>Index</h1>
 
+<div class="row">
+  <div id="mapholder" class="col-xs-12 col-sm-6 col-md-8 map-canvas"></div>
+  <div class="col-xs-6 col-md-4">
+    <form action="/results" method="GET" role="form">
+      <div class="form-group">
+        <input type="text" class="form-control" name="address" placeholder="Enter Address">
+      </div>
+      <button type="submit" class="btn btn-primary pull-right">Submit</button>
+    </form>
+    <br /><br /><br />
+    <form action="/results" method="GET" role="form">
+      <div class="form-group">
+        <input type="text" class="form-control" name="address" placeholder="Enter Address">
+      </div>
+      <button type="submit" class="btn btn-primary pull-right">Submit</button>
+    </form>
+  </div>
+</div>
 <!-- <form action="/" method="POST" role="form">
   <div class="form-group">
     <input type="text" class="form-control" id="" placeholder="Input field">
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form> -->
-<form action="/results" method="GET" role="form">
-  <div class="form-group">
-    <input type="text" class="form-control" name="address" placeholder="Enter Address">
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+
+
+<script src="https://maps.googleapis.com/maps/api/js?&v=3.21&callback=initMap&libraries=places&key=AIzaSyCjpLWue5GTsHRzJmp4pOxFFJoRGpTMWCc"></script>
+<script type="text/javascript" src="js/mainmap.js"></script>
 
 <!-- <a href="/results"><button type="button" class="btn btn-primary">Get Location</button></a> -->

@@ -11,6 +11,7 @@ function initMap() {
     zoom: 15
   });
 
+  // Creates the circle with a 500 meter radius on the map that is centered on the destination location
   var circle = new google.maps.Circle({
     strokeColor: '#96ECFF',
     strokeOpacity: 0.8,
@@ -37,8 +38,6 @@ function initMap() {
 }
 
 function callback(results, status) {
-  console.log(results)
-  // console.log('blah');
   if (status == google.maps.places.PlacesServiceStatus.OK) {
     for (var idx in results) {
       var marker = new google.maps.Marker({
@@ -49,14 +48,11 @@ function callback(results, status) {
         },
         title: results[idx].name
       });
-      // console.log(results[idx].name);
 
       // Clickable marker with description
-
       marker.addListener('click', function() {
         var infoWindow = new google.maps.InfoWindow({content: "<h3>" + this.title + "</h3>"})
         infoWindow.open(map, this);
-        console.log(description.name)
       })
     }; 
   };

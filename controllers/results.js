@@ -10,9 +10,7 @@ router.use(bodyParser.urlencoded({extended: false}));
 router.route('/results')
   .get(function(req, res) {
     if (req.query.address.length > 0) {
-      // var locationInput = req.query.address;
-      var origins = [req.query.address];
-      var destinations = [req.query.address2];
+      var origins = req.query.address;
       geocoder.geocode(origins, function (err, data) {
         var rendezvous = data.results[0].geometry.location
           res.render('results', {rendezvous: rendezvous});

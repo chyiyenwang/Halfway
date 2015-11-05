@@ -31,7 +31,7 @@ function initMap() {
   var request = {
     location: map.getCenter(),
     radius: 900,
-    query: 'park'
+    query: userButton
   };
 
   var service = new google.maps.places.PlacesService(map);

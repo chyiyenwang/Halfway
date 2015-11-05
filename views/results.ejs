@@ -3,17 +3,27 @@
 <div class="row">
   <p><div id="mapholder" class="col-xs-12 col-sm-6 col-md-8 map-canvas"></div></p>
   <div class="col-xs-12 col-md-4">
-    <form action="/results" method="GET" role="form">
-      <div class="form-group address-input">
-        <p><input type="text" class="form-control" name="address1" placeholder="Enter First Address"><p>
-
-        <p><input type="text" class="form-control" name="address2" placeholder="Enter Second Address"></p>
-      </div>
-      <button type="submit" class="btn btn-primary pull-right login-button">Submit</button>
-    </form>
+        <form action="/results" method="GET" role="form">
+          <div class="form-group address-input">
+            <p><input type="text" class="form-control" name="address1" placeholder="Enter First Address"><p>
+            <input type="text" class="form-control" name="address2" placeholder="Enter Second Address">
+          </div>
+          <button type="submit" class="btn btn-primary pull-right login-button">Submit</button>
+          <div class="checkbox-form">
+            <p><input type="radio" value='"bakery"' name="radioButton" checked="checked">&nbsp;&nbsp;Bakeries</p>
+            <p><input type="radio" value='"bank"' name="radioButton">&nbsp;&nbsp;Banks</p>
+            <p><input type="radio" value='"bar"' name="radioButton">&nbsp;&nbsp;Bars</p>
+            <p><input type="radio" value='"book_store"' name="radioButton">&nbsp;&nbsp;Book Stores</p>
+            <p><input type="radio" value='"coffee"' name="radioButton">&nbsp;&nbsp;Coffee Shops</p>
+            <p><input type="radio" value='"museum"' name="radioButton">&nbsp;&nbsp;Museums</p>
+            <p><input type="radio" value='"park"' name="radioButton">&nbsp;&nbsp;Parks</p>
+            <p><input type="radio" value='"restaurant"' name="radioButton">&nbsp;&nbsp;Restaurants</p>
+          </div>
+        </form>
   </div>
 </div>
 
+<script>var userButton = <%- userButton %></script>
 <script>var rendezvous = <%- JSON.stringify(rendezvous) %></script>
 <script src="https://maps.googleapis.com/maps/api/js?&v=3.21&callback=initMap&libraries=places&key=AIzaSyCjpLWue5GTsHRzJmp4pOxFFJoRGpTMWCc"></script>
 <script type="text/javascript" src="js/geolocation.js"></script>

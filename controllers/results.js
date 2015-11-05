@@ -13,34 +13,22 @@ router.route('/results')
     if (req.query.address1.length > 0) {
       var user1 = req.query.address1;
       var user2 = req.query.address2;
-      // res.send(spots)
-      
-      // res.send(spots);
+
       geocoder.geocode(user1, function(err, data) {
-        // res.send(spots);
         user1 = data.results[0].geometry.location;
         geocoder.geocode(user2, function(err, data) {
           user2 = data.results[0].geometry.location;
-          // var spots = {
-          //   user1: user1,
-          //   user2: user2
-          // };
+
+          // Finds the location between the 2 
           var rendezvous = geolib.getCenter([
             {latitude: user1.lat, longitude: user1.lng},
             {latitude: user2.lat, longitude: user2.lng}
           ])
+
           rendezvous.latitude = parseFloat(rendezvous.latitude);
           rendezvous.longitude = parseFloat(rendezvous.longitude);
-
-          // res.send([rendezvous, user1, user2]);
-          // res.send
-          // res.render('results', {user1: user1, user2: user2});
-          // res.send(spots);
-          // res.send(user1)
           res.render('results', {rendezvous: rendezvous});
         })
-
-        //   res.render('results', {rendezvous: rendezvous});
       });
     }
     else {
@@ -49,8 +37,6 @@ router.route('/results')
     }
   })
   .post(function(req, res) {
-    // res.send(req.body.title);
-    // db.user.findbyId()
     if (req.session.user == null) {
       req.flash('danger', 'You need to be signed in!');
       res.redirect('/');
@@ -71,10 +57,5 @@ router.route('/results')
       })
     };
   });
-
-// router.route('/results')
-//   .get(function(req, res) {
-//     res.render('results');
-//   });
 
 module.exports = router;

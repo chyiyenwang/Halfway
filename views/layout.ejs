@@ -23,7 +23,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse navbar-ex1-collapse">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link</a></li>
+        <li class="active"><a href="/locations">Locations</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
       <% if (!currentUser) { %>
@@ -53,6 +53,19 @@
   </nav>
   <div class="container">
     <% include alerts %>
+<!--     <div class="row">
+      <br />
+      <p><div id="mapholder" class="col-xs-12 col-sm-6 col-md-8 map-canvas"></div></p>
+      <div class="col-xs-6 col-md-4">
+        <form action="/results" method="GET" role="form">
+          <div class="form-group">
+            <p><input type="text" class="form-control" name="address1" placeholder="Enter First Address"><p>
+            <input type="text" class="form-control" name="address2" placeholder="Enter Second Address">
+          </div>
+          <button type="submit" class="btn btn-primary pull-right">Submit</button>
+        </form>
+      </div>
+    </div> -->
     <%- body %>
   </div>
 </body>

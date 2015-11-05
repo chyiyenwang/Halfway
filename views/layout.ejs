@@ -33,10 +33,10 @@
           <ul class="dropdown-menu login-bar">
             <form action="/auth/login" method="POST" role="form">
               <div class="form-group login-form">
-                <input type="email" class="form-control" name="email" placeholder="Email">
-                <input type="password" class="form-control" name="password" placeholder="Password">
+                <input type="email" class="form-control login-input" name="email" placeholder="Email">
+                <input type="password" class="form-control login-input" name="password" placeholder="Password">
               </div>
-              <button type="submit" class="btn btn-primary pull-right">Submit</button>
+              <button type="submit" class="btn btn-primary login-button">Submit</button>
             </form>
           </ul>
         </li>
@@ -53,20 +53,12 @@
   </nav>
   <div class="container">
     <% include alerts %>
-<!--     <div class="row">
-      <br />
-      <p><div id="mapholder" class="col-xs-12 col-sm-6 col-md-8 map-canvas"></div></p>
-      <div class="col-xs-6 col-md-4">
-        <form action="/results" method="GET" role="form">
-          <div class="form-group">
-            <p><input type="text" class="form-control" name="address1" placeholder="Enter First Address"><p>
-            <input type="text" class="form-control" name="address2" placeholder="Enter Second Address">
-          </div>
-          <button type="submit" class="btn btn-primary pull-right">Submit</button>
-        </form>
-      </div>
-    </div> -->
     <%- body %>
   </div>
+  <script>
+  $(document).ready(function() {
+    $(".alert").delay(2200).fadeOut(300);
+  });
+  </script>
 </body>
 </html>

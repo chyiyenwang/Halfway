@@ -24,6 +24,7 @@ router.route('/auth/signup')
         }
       }).spread(function(user, created) {
         if (created) {
+          req.session.user = user.id;
           req.flash('success', 'You are signed up!');
           res.redirect('/');
         }

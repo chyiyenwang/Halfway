@@ -17,14 +17,39 @@ h1 {
     padding: 0;
 }
 
-.login-bar {
-  width: 300px;
-}
-
 .form-control {
   padding-top: 10px;
   padding-bottom: 10px;
 }
+
+.signup-input {
+  margin-bottom: 5px;
+}
+
+.login-bar {
+  width: 300px;
+  padding: 15px;
+  padding-bottom: 0px;
+}
+
+.login-input {
+  margin-bottom: 15px;
+}
+
+.login-button {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.checkbox-area {
+  border: 1px solid black;
+  height: 50vh;
+}
+
+.checkbox-form {
+  font-size: 16px;
+}
+
 @media (max-width: 991px) {
   h1 {
     background-color: red;
@@ -33,5 +58,12 @@ h1 {
     position: relative;
     width: 100%;
     padding-bottom: 56.25%;
+  }
+  .address-input {
+    margin-top: 15px;
+    width: 100%;
+  }
+  .login-button {
+    width: 100%;
   }
 }

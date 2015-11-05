@@ -31,9 +31,7 @@ function initMap() {
   var request = {
     location: map.getCenter(),
     radius: 900,
-    // rankBy: google.maps.places.RankBy.DISTANCE,
-    query: 'gas',
-    openNow: true
+    query: 'park'
   };
 
   var service = new google.maps.places.PlacesService(map);

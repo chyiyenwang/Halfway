@@ -10,7 +10,7 @@ router.use(bodyParser.urlencoded({extended: false}));
 
 router.route('/results')
   .get(function(req, res) {
-    if (req.query.address1.length > 0 && req.query.address2.length > 0) {
+    if (req.query.address1 && req.query.address1.length > 0 && req.query.address2 && req.query.address2.length > 0) {
       var user1 = req.query.address1;
       var user2 = req.query.address2;
       var userButton = req.query.radioButton;

@@ -164,14 +164,14 @@ $('#mapholder').on('click', '#share', function(e) {
       directionsDisplay.setDirections(response);
     }
   })
+  console.log(destTitle);
   $.ajax({
     url: '/results',
     type: 'POST',
-    data: {name: destTitle, address: destAddress},
+    data: {title: destTitle, address: destAddress},
     success: function() {
       console.log('cool');
     }
   })
-  console.log(destTitle);
   console.log(destAddress);
 });

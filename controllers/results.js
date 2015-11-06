@@ -14,7 +14,6 @@ router.route('/results')
       var user1 = req.query.address1;
       var user2 = req.query.address2;
       var userButton = req.query.radioButton;
-      // console.log(req.query.radioButton);
 
       geocoder.geocode(user1, function(err, data) {
         user1 = data.results[0].geometry.location;
@@ -55,7 +54,7 @@ router.route('/results')
           userId: req.session.user
         }
       }).spread(function(user, created) {
-        res.redirect('/');
+        res.redirect('/locations');
       })
     };
   });

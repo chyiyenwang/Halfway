@@ -1,13 +1,31 @@
-<h1>locations</h1>
+<!-- <h1>locations</h1> -->
 
 <% if (!currentUser) { %>
-  You need to log in first!
+  <h1>You need to log in first!</h1>
 <% } else { %>
   <% places.forEach(function(place) { %>
   <div class="well">
-    <h3><%= place.name %>
+    <h3><%= place.name %><a href="/locations/<%= place.id %>" class='atag'><button type="button" data-id="<%= place.id %>" class="btn btn-danger pull-right">Delete</button></a>
     <p><small><%= place.address %></small></p></h3>
   </div>
   <% }) %>
 <% }; %>  
 
+
+<script type='text/javascript'>
+  $(document).ready(function() {
+    $('.well').on('click', '.atag', function(e) {
+      e.preventDefault();
+      console.log($(this));
+      var url = $(this).attr('href');
+      console.log(url);
+      $.ajax({
+        url: url,
+        type: "DELETE"
+      }).done(function() {
+        window.location = '/locations'
+      });
+    });
+  })
+
+</script>

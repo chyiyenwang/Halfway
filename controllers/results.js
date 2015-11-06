@@ -28,7 +28,7 @@ router.route('/results')
 
           rendezvous.latitude = parseFloat(rendezvous.latitude);
           rendezvous.longitude = parseFloat(rendezvous.longitude);
-          res.render('results', {rendezvous: rendezvous, userButton: userButton});
+          res.render('results', {rendezvous: rendezvous, user1: user1, userButton: userButton});
         })
       });
     }
@@ -54,7 +54,7 @@ router.route('/results')
           userId: req.session.user
         }
       }).spread(function(user, created) {
-        res.redirect('/locations');
+        res.redirect('/results');
       })
     };
   });

@@ -60,6 +60,7 @@ app.get('/', function(req, res) {
 app.use('/', require('./controllers/auth'));
 app.use('/', require('./controllers/results'));
 app.use('/', require('./controllers/locations'));
+app.use('/', require('./controllers/directions'));
 
 app.listen(port, function() {
   console.log('Skynet initializing');

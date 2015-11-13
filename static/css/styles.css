@@ -8,34 +8,45 @@
 .form-control {
   padding-top: 10px;
   padding-bottom: 10px;
+  border-radius: 0;
 }
 
 .signup-input {
   margin-bottom: 5px;
+  border-radius: 0;
 }
 
 .login-bar {
   width: 300px;
   padding: 15px;
   padding-bottom: 0px;
+  border-radius: 0;
 }
 
 .login-input {
   margin-bottom: 15px;
+  border-radius: 0;
 }
 
 .login-button {
   width: 100%;
   margin-bottom: 15px;
+  border-radius: 0;
 }
 
 .checkbox-area {
   border: 1px solid black;
   height: 50vh;
+  border-radius: 0;
 }
 
 .checkbox-form {
   font-size: 16px;
+  border-radius: 0;
+}
+
+.alert {
+  border-radius: 0;
 }
 
 @media (max-width: 991px) {
@@ -44,12 +55,15 @@
     width: 100%;
     padding-bottom: 56.25%;
     margin-left: 0px;
+    border-radius: 0;
   }
   .address-input {
     margin-top: 15px;
     width: 100%;
+    border-radius: 0;
   }
   .login-button {
     width: 100%;
+    border-radius: 0;
   }
 }

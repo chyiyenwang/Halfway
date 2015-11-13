@@ -61,6 +61,15 @@ app.use('/', require('./controllers/auth'));
 app.use('/', require('./controllers/results'));
 app.use('/', require('./controllers/locations'));
 app.use('/', require('./controllers/directions'));
+app.get('/error', function(req, res) {
+  res.render('error');
+});
+app.use(function(req, res, next) {
+   res.status(404);
+   res.redirect('/error');
+   next();
+});
+
 
 app.listen(port, function() {
   console.log('Skynet initializing');

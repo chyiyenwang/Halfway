@@ -32,7 +32,7 @@ router.route('/locations/:id')
     }).then(function(location) {
       console.log(location);
       location.destroy({force: true}).then(function() {
-        res.send('you a bitch');
+        res.send('deleted');
       });
     });
   });

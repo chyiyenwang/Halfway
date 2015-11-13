@@ -107,7 +107,7 @@ $('#mapholder').on('click', '#share', function(e) {
     type: 'POST',
     data: {title: destTitle, address: destAddress},
     success: function() {
-      console.log('cool');
+      console.log('Show Directions');
     }
   })
   console.log(destAddress);

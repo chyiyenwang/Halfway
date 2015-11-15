@@ -15,6 +15,7 @@ router.route('/results')
       var user2 = req.query.address2;
       var userButton = req.query.radioButton;
 
+      // Finds the location of Address1 and Address2
       geocoder.geocode(user1, function(err, data) {
         user1 = data.results[0].geometry.location;
         geocoder.geocode(user2, function(err, data) {
@@ -26,6 +27,7 @@ router.route('/results')
             {latitude: user2.lat, longitude: user2.lng}
           ])
 
+          // Converts the rendezvous location from a string into a float
           rendezvous.latitude = parseFloat(rendezvous.latitude);
           rendezvous.longitude = parseFloat(rendezvous.longitude);
           res.render('results', {rendezvous: rendezvous, user1: user1, userButton: userButton});

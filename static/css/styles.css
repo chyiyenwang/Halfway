@@ -1,3 +1,7 @@
+.navbar {
+  border-radius: 0;
+}
+
 #mapholder {
     position: relative;
     width: 65%;

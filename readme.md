@@ -10,7 +10,6 @@ This is a full stack web app utilizing Express and Node.js for the backend.  Thi
 * AJAX
 * Google Maps Directions API
 * Google Maps Places API
-* Google Maps Geolocation API
 
 ### Features
 * Find a halfway destination point of your choosing between two addresses

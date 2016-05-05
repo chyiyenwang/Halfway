@@ -1,17 +1,25 @@
-Halfway
+# [Halfway](https://halfway-chyiwang.herokuapp.com/)
 
-Heroku: https://halfway-chyiwang.herokuapp.com/
-Git: https://github.com/chyiyenwang/Halfway
-Wireframe: https://generalassembly.mybalsamiq.com/projects/wdi-sea-04/Chyi%20Wang%20-%20Halfway
+### About
+This is a full stack web app utilizing Express and Node.js for the backend.  This application finds a halfway destination (ie. coffee shop, restaurant, bar, etc) between two addresses by consuming the Google Maps Geolocation, Directions,  and Places API.  The inspiration for this app came from being frustrated with trying to find an actual halfway destination between myself and my friends. 
 
-User Stories
----------------------
-A person wanting to meet up with another friend, but they also want to meet at the midpoint so it is fair for both parties.
+### Technologies Used
+* JavaScript
+* jQuery
+* Express/Node.js
+* AJAX
+* Google Maps Directions API
+* Google Maps Places API
+* Google Maps Geolocation API
 
+### Screenshots
+##### Home
+![Home](https://github.com/chyiyenwang/Halfway/blob/master/static/images/halfway-image.png "Home screenshot")
 
+### Features
+# Find a halfway destination point of your choosing between two addresses
+# When the user is signed in they will be able to see locations they have previously visted
 
-Technologies Used
----------------------
-- jQuery
-- AJAX
-- Google Maps API
+### User Stories
+A person wanting to meet up with another friend, but they also want to meet at a destination that is fair for the both of them.
+

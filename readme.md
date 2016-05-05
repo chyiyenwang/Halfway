@@ -7,6 +7,8 @@ This is a full stack web app utilizing Express and Node.js for the backend.  Thi
 * JavaScript
 * jQuery
 * Express/Node.js
+* PostgreSQL
+* Sequelize
 * AJAX
 * Google Maps Directions API
 * Google Maps Places API

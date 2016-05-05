@@ -13,7 +13,7 @@ This is a full stack web app utilizing Express and Node.js for the backend.  Thi
 
 ### Features
 * Find a halfway destination point of your choosing between two addresses
-* When the user is signed in they will be able to see locations they have previously 
+* When the user is signed in they will be able to see locations they have previously visited
 
 ### User Stories
 A person wanting to meet up with another friend, but they also want to meet at a destination that is fair for the both of them.
